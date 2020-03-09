@@ -16,7 +16,7 @@ minimal_mistakes_skin    : "dark" # "air", "aqua", "contrast", "dark", "dirt", "
 
 # Site Settings
 locale                   : "en-US"
-title                    : "치즈개발자 기술 블로그"
+title                    : "유상이의 기술 블로그"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
 name                     : "Yousang Oh"
@@ -111,7 +111,7 @@ author:
   avatar           : "/assets/images/me.jpg"
   bio              : "Software Engineer"
   location         : "Seoul, KR"
-  email            :
+  email            : ys9617@outlook.kr
   links:
     - label: "ys9617@outlook.kr"
       icon: "fas fa-fw fa-envelope-square"
