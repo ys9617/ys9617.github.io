@@ -1,7 +1,7 @@
 ---
 layout: posts
 title: CUDA 를 사용하여 효과적으로 컬러 이미지를 흑백 이미지로 바꿔보자!
-tags: [CUDA, Computer Vision]
+tags: [CUDA, Computer Vision, OpenCV, Nsight Compute]
 ---
 
 <br/>
