@@ -88,7 +88,9 @@ Mat colorToGray(Mat &colorImg) {
 }
 ```
 
-kernel 함수는 다음과 같습니다. 
+block 의 크기는 최대 thread 수인 1024 개를 사용하기 위해 32x32 사이즈를 할당했고 grid 는 block 크기와 이미지 크기에 따라 정하였습니다. 
+
+kernel 함수 에서는 단순이 BGR 순서대로 값을 읽고 위의 식대로 휘도(Luminance) 를 계산하였습니다.
 
 ```cpp
 // CUDA kernel for converting rgb t0 gray
@@ -147,8 +149,7 @@ const Npp32f aCoeffs[] = { 0.299f, 0.587f, 0.114f };
 nppiColorToGray_8u_C3C1R(dImg, dImgPitch, dGrayImg, dGrayImgPitch, oSizeROI, aCoeffs);
 ```
 
-<!--
-그렇다면 직접 작성한 kernel 함수와 NPP library 의 성능 비교를 해 봅시다.
+그렇다면 직접 작성한 kernel 함수와 NPP library 의 성능 비교 Nsight Compute를 통해 해 봅시다.
 
 아래의 그림은 직접 작성한 kernel 함수와 NPP library 의 kernel 성능 결과 입니다. Current 가 NPP library 이고 Baseline 1 이 직접 작성한 코드 입니다.
 
@@ -158,41 +159,6 @@ nppiColorToGray_8u_C3C1R(dImg, dImgPitch, dGrayImg, dGrayImgPitch, oSizeROI, aCo
     <figcaption>ColorToGray 와 NPP 결과 성능 비교</figcaption>
 </figure>
 
-결과를 보면 Baseline 1 이 0.35(ms) 정도 빠른 것을 볼 수 있습니다. GPU utilization 을 보면 NPP 가 memory bound 인 것을 보실 수 있습니다. 다시 말해 memory 자원이 부족하여 성능이 낮아 졌다고 유추 할 수 있습니다. 그러면 각각 thread, block 그리고 grid 의 크기를 어떻게 정했는지 살펴봅시다.
+결과를 보면 알 수 있듯이 직접 작성한  kernel 의 경우가 성능이 더 좋게 나온것을 알 수 있습니다. 
 
-먼저 cuColorToGray 함수의 경우를 살펴 봅시다. 위 성능 비교에서 사용한 이미지의 해상도는 3264 x 2448 입니다. 저는 여기에서 한 블락당 최대의 threads 를 쓰기 위해 한 블락당 thread 수 최고치인 1024 개를 할당하기 위해 block dimension 을 32 x 32 로 정했습니다. 그런 다음 grid dimension 을 이에 맞게 정하였습니다.
-
-```cpp
-// kernel block and grid size
-dim3 block(32, 32);
-dim3 grid(width / 32 + 1, height / 32 + 1);
-```
-
-
-밑의 이미지를 보면
-block size = 32 x 32 = 1024
-grid size = (3264/32 + 1) x (2448/32 + 1) = 103 * 77 = 7932
-인 것을 볼 수 있다.
-
-<figure class="HS">
-    <img src="../assets/images/performance_result3.png" width="700">
-    <figcaption>cuColorToGray Nsight Compute 검사 결과 grid, block, thread size</figcaption>
-</figure>
-
-그러면 NPP 결과도 살펴보자
-밑의 결과를 보면 알 수 있듯이 block size 가 1/4 이다. 
-
-<figure class="HS">
-    <img src="../assets/images/performance_result4.png" width="700">
-    <figcaption>cuColorToGray Nsight Compute 검사 결과 grid, block, thread size</figcaption>
-</figure>
-
-위 결과를 보면 계산량이 많지않은 kernel 의 경우 block 의 수를 많이 가져가는 것 보다 block 당 thread 수를 더 많이 할당하는 것이 성능이 더 좋은것을 볼 수 있다.
--->
-
-
-
-
-
-
-
+다음번 포스트 에는 cuColorToGray kernel 이 왜 더 성능이 좋게 나왔는지를 Nsight Compute report 를 보고 분석해 보도록 하겠습니다!
