@@ -8,7 +8,7 @@ tags: [CUDA, Computer Vision, OpenCV, Nsight Compute, NPP]
 컬러 이미지는 보통 RGB 형태로 표현 되는데, 이미지의 각 픽셀은 (r, g, b) 값의 튜플로 저장 됩니다. 아래의 그림과 같이 이미지 행은 (r g b), (r g b)... 형식으로 나타내어 집니다. 즉 하나의 픽셀은 r, g 그리고 b 의 값이 합쳐져서 나타내어 지게 됩니다.<br/>
 
 <figure style="margin-left: 5em; margin-right: 5em;">
-    <img src="../assets/images/color_to_gray/color_rgb.png">
+    <img src="../assets/images/color_to_gray/color_rgb.PNG">
     <figcaption>RGB 컬러 형식</figcaption>
 </figure>
 
@@ -120,9 +120,9 @@ imshow("IMAGE_COLOR", img);
 imshow("IMAGE_GRAY", grayImg);
 ```
 
-<figure class="HS">
-    <img src="../assets/images/color_to_gray/hs.jpg" width="300">
-    <img src="../assets/images/color_to_gray/GRAY_HS.jpg" width="300">
+<figure syle="disply: inline-block;">
+    <img style="max-width:48%" src="../assets/images/color_to_gray/hs.jpg">
+    <img style="max-width:48%" src="../assets/images/color_to_gray/GRAY_HS.jpg">
     <figcaption>컬러 이미지와 흑백 이미지</figcaption>
 </figure>
 
@@ -145,9 +145,9 @@ nppiColorToGray_8u_C3C1R(dImg, dImgPitch, dGrayImg, dGrayImgPitch, oSizeROI, aCo
 
 아래의 그림은 직접 작성한 kernel 함수와 NPP library 의 kernel 성능 결과 입니다. Current 가 NPP library 이고 Baseline 1 이 직접 작성한 코드 입니다.
 
-<figure class="HS">
-    <img src="../assets/images/color_to_gray/performance_result1.png" width="700">
-	<img src="../assets/images/color_to_gray/performance_result2.png" width="700">
+<figure class="PerformanceResults">
+    <img src="../assets/images/color_to_gray/performance_result1.PNG" width="700">
+	<img src="../assets/images/color_to_gray/performance_result2.PNG" width="700">
     <figcaption>ColorToGray 와 NPP 결과 성능 비교</figcaption>
 </figure>
 
