@@ -1,8 +1,8 @@
 ---
-title: "이 블로그 설명서"
+title: ""
 permalink: /about/
 layout: single
 ---
 
-TEST
+
 
