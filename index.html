@@ -33,6 +33,11 @@
 	gtag('config', 'UA-109821369-1');
 	</script>
 
+<audio id="audio" autoplay loop>
+	<source src="http://mobile-invitation.co.kr/audio/I-Love-Penny-Sue.mp3" loop>
+</audio>
+<a class="play"><i id="bgmicon" style="color: #dab0a2 !important; font-size : 22px; !important" class="fas fa-volume-mute"></i></a>
+
 	</head>
 <!--
 	<div id="fh5co-header">
@@ -53,11 +58,16 @@
 	</div>
 -->
 	
-	<!--<audio src="./music/bgsound.mp3" autostart="true">
-		Your browser does not support the HTML5 Audio element.
-	</audio>-->
-	<embed name="GoodEnough" src="./music/bgsound2.mp3" hidden="true" loop="1" autostart="1">
-	</embed>
+	
+
+
+	<!-- <audio controls>
+		<source src="horse.ogg" type="audio/ogg">
+		<source src="http://mobile-invitation.co.kr/audio/I-Love-Penny-Sue.mp3" autoplay loop>
+	  Your browser does not support the audio element.
+	</audio> -->
+
+	  
 
 	<div id="fh5co-main">
 		<div class="fh5co-overlay-mobile"></div>
@@ -90,25 +100,25 @@
 				<div class="row">
 					<div class="col-md-6 text-center animate-box">
 						<div class="wed-events" style="padding-bottom:3em"  style="border-radius:20px;">
-						<div class="row text-center " style="ned-underl">
-						<h2 class="ned-section-venue animate-box">
-						모시는 글<br>
-						<img src="./images/subject_deco.png" width="161" height="22"> 
-						</h2>
-						</div>
+							<div class="row text-center " style="ned-underl">
+								<h2 class="ned-section-venue animate-box">
+								모시는 글<br>
+								<img src="./images/subject_deco.png" width="161" height="22">
+								</h2>
+							</div>
 
-						<p class="ned-lead animate-box" style="line-height:160%;">
-						<br>
-						서로 다른 생각, 다른 생활방식을 가지고 살아온<br>
-						유상이와 희선이가 이제 부모를 떠나<br>
-						한 몸을 이루어 새로운 한 가정으로<br>
-						첫 걸음을 내딛습니다.<br>
-						유상이는 자기 자신을 사랑하는 것 같이<br>
-						아내를 사랑하고,<br>
-						희선이는 남편을 가정의 결정권자로 인정하고<br>
-						순종하겠습니다.<br>
-						첫 걸음의 증인이 되어<br>
-						저희의 하나됨을 축복해 주세요<br></p>
+							<p class="ned-lead animate-box" style="line-height:160%;">
+							<br>
+							서로 다른 생각, 다른 생활방식을 가지고 살아온<br>
+							유상이와 희선이가 이제 부모를 떠나<br>
+							한 몸을 이루어 새로운 한 가정으로<br>
+							첫 걸음을 내딛습니다.<br>
+							유상이는 자기 자신을 사랑하는 것 같이<br>
+							아내를 사랑하고,<br>
+							희선이는 남편을 가정의 결정권자로 인정하고<br>
+							순종하겠습니다.<br>
+							첫 걸음의 증인이 되어<br>
+							저희의 하나됨을 축복해 주세요<br></p>
 
 						</div>
 					</div>
@@ -131,8 +141,8 @@
 									new daum.roughmap.Lander({
 										"timestamp" : "1598683153801",
 										"key" : "2ztgv",
-										"mapWidth" : "400",
-										"mapHeight" : "400"
+										"mapWidth" : "300",
+										"mapHeight" : "300"
 									}).render();
 								</script>
 								<a onclick="this.nextSibling.style.display=(this.nextSibling.style.display=='none')?'block':'none';" href="javascript:void(0)">
@@ -157,10 +167,10 @@
 		<div class="container">
 			<div class="row">
 				<div style="padding-left:5px;padding-right:5px;padding-top:1em;padding-bottom:0.5em;">
-				<h2 class="ned-section-venue animate-box text-center">우리의 사진들<br>
+				<h2 class="ned-section-venue animate-box text-center">Gallery<br>
 				<img src="./images/subject_deco.png" width="161" height="22"> </h2>
 				</div>
-				<div class="col-md-4">
+				<div class="col-md-6">
 					<div class="gallery animate-box">
 						<a class="gallery-img img-popup" href="./images/img1.png"><img src="./images/img1.png" class="img-respxonsive" alt="사진1-1"></a>
 					</div>
@@ -174,7 +184,7 @@
 						<a class="gallery-img img-popup" href="./images/img5.png"><img src="./images/img5.png" class="img-responsive" alt="사진1-1"></a>
 					</div>
 				</div>
-				<div class="col-md-4">
+				<div class="col-md-6">
 					<div class="gallery animate-box">
 						<a class="gallery-img img-popup" href="./images/img6.png"><img src="./images/img6.png" class="img-responsive" alt="사진1-1"></a>
 					</div>
@@ -191,7 +201,8 @@
 						<a class="gallery-img img-popup" href="./images/img11.png"><img src="./images/img11.png" class="img-responsive" alt="사진1-1"></a>
 					</div>
 				</div>
-				<div class="col-md-4">
+				<!--
+				<div class="col-md-3">
 					<div class="gallery animate-box">
 						<a class="gallery-img img-popup" href="./images/img12.png"><img src="./images/img12.png" class="img-responsive" alt="사진1-1"></a>
 					</div>
@@ -205,12 +216,20 @@
 						<a class="gallery-img img-popup" href="./images/img15.png"><img src="./images/img15.png" class="img-responsive" alt="사진1-1"></a>
 					</div>
 				</div>
+			-->
 			</div>
+			
 
+			<audio controls>
+				<source src="horse.ogg" type="audio/ogg">
+				<source src="http://mobile-invitation.co.kr/audio/I-Love-Penny-Sue.mp3" autoplay loop>
+			Your browser does not support the audio element.
+			</audio>
 
 
 		</div>
 	</div>
+
 
 <!-- copy script -->
 <script type="text/javaScript">
