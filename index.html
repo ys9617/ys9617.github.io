@@ -33,11 +33,11 @@
 	gtag('config', 'UA-109821369-1');
 	</script>
 
-<audio id="audio" autoplay loop>
+<!--<audio id="audio" autoplay loop>
 	<source src="http://mobile-invitation.co.kr/audio/I-Love-Penny-Sue.mp3" loop>
 </audio>
 <a class="play"><i id="bgmicon" style="color: #dab0a2 !important; font-size : 22px; !important" class="fas fa-volume-mute"></i></a>
-
+-->
 	</head>
 <!--
 	<div id="fh5co-header">
@@ -68,11 +68,62 @@
 			<div class="flexslider" style="background-image: URL(./images/img1.png); background-position: center; background-repeat: no-repeat;">
 				<div class="fh5co-overlay">
 
-					<audio controls>
-						<source src="horse.ogg" type="audio/ogg">
-						<source src="http://mobile-invitation.co.kr/audio/I-Love-Penny-Sue.mp3" autoplay="true" loop="true">
-						Your browser does not support the audio element.
-					</audio>
+					<!--<div id="lH">
+						<audio controls id="aH" >
+							<source src="horse.ogg" type="audio/ogg">
+							<source src="http://mobile-invitation.co.kr/audio/I-Love-Penny-Sue.mp3" autoplay="true" loop="false">
+							Your browser does not support the audio element.
+						</audio>
+
+						<script>
+							function toggleImage() {
+							   var img1 = "./images/sound_on.png";
+							   var img2 = "./images/sound_off.png";
+							   
+							   var imgElement = document.getElementById('toggleImage');
+							
+							   imgElement.src = (imgElement.src === img1)? img2 : img1;
+							}
+						</script>
+
+
+						<img src="./images/sound_on.png" width="20" height="20" id="toggleImage" onclick="toggleImage();"/>
+						
+
+							<img src="./images/sound_on.png" width="20" height="20">
+
+					</div>
+					-->
+
+
+					<audio id="myAudio"> 
+						<source src="http://mobile-invitation.co.kr/audio/I-Love-Penny-Sue.mp3" type='audio/mp3'> 
+						<source src="http://mobile-invitation.co.kr/audio/I-Love-Penny-Sue.oga" type='audio/ogg; codecs=vorbis'> 
+							Your user agent does not support the HTML5 Audio element. 
+					</audio> 
+					<!--<button type="button" onclick="aud_play_pause()">Play</button>-->
+					<div style="opacity: 0.65;" >
+						<img src="./images/sound_on.png" width="25" height="25" id="toggleImage" onclick="aud_play_pause();"/>
+					</div>
+					<script> 
+						function aud_play_pause() { 
+							var myAudio = document.getElementById("myAudio"); 
+							
+							if (myAudio.paused) { 
+								myAudio.play(); 
+							} 
+							else { 
+								myAudio.pause(); 
+							}
+
+							var img1 = "http://localhost:4000/images/sound_on.png";
+							var img2 = "http://localhost:4000/images/sound_off.png";
+							var imgElement = document.getElementById('toggleImage');
+							
+							imgElement.src = (imgElement.src === img1)? img2 : img1;
+						} 
+					</script>
+
 				</div>
 
 				<div class="fh5co-text">
@@ -151,7 +202,7 @@
 								</a><div style="DISPLAY: none"><br/><br/>
 								<p class="ned-lead">
 								</p>
-								<img src="./images/img3.png" width="336" height="534">
+								<img src="./images/img3.png" width="436" height="436">
 								<br/><br/><a onclick="this.parentNode.style.display='none';" href="javascript:void(0)">
 								접기
 								</a></div>
