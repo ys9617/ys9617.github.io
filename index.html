@@ -97,7 +97,7 @@
 
 
 					<audio id="myAudio"> 
-						<source src="http://mobile-invitation.co.kr/audio/I-Love-Penny-Sue.mp3" type='audio/mp3'> 
+						<source src="http://mobile-invitation.co.kr/audio/I-Love-Penny-Sue.mp3" type='audio/mp3' autoplay="true"> 
 						<source src="http://mobile-invitation.co.kr/audio/I-Love-Penny-Sue.oga" type='audio/ogg; codecs=vorbis'> 
 							Your user agent does not support the HTML5 Audio element. 
 					</audio> 
@@ -116,8 +116,8 @@
 								myAudio.pause(); 
 							}
 
-							var img1 = "http://localhost:4000/images/sound_on.png";
-							var img2 = "http://localhost:4000/images/sound_off.png";
+							var img1 = ".images/sound_on.png";
+							var img2 = "./images/sound_off.png";
 							var imgElement = document.getElementById('toggleImage');
 							
 							imgElement.src = (imgElement.src === img1)? img2 : img1;
@@ -202,7 +202,7 @@
 								</a><div style="DISPLAY: none"><br/><br/>
 								<p class="ned-lead">
 								</p>
-								<img src="./images/img3.png" width="436" height="436">
+								<img src="./images/img3.png" width="336" height="336">
 								<br/><br/><a onclick="this.parentNode.style.display='none';" href="javascript:void(0)">
 								접기
 								</a></div>
